@@ -1,3 +1,9 @@
+This is a fork of the sequelize-guard library originally created by lotivo. This version includes the following modifications:
+- Minor changes to work better with sequelize 6
+
+The original repository can be found at: https://github.com/lotivo/sequelize-guard
+
+
 # SequelizeGuard
 
 [![Build Status](https://travis-ci.com/lotivo/sequelize-guard.svg?branch=master)](https://travis-ci.com/lotivo/sequelize-guard) [![Coverage Status](https://coveralls.io/repos/github/lotivo/sequelize-guard/badge.svg?branch=master)](https://coveralls.io/github/lotivo/sequelize-guard?branch=master)

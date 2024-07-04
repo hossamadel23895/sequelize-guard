@@ -1,7 +1,7 @@
 {
-  "name": "sequelize-guard",
-  "version": "0.1.3",
-  "description": "A fork of sequelize-guard with bug fixes",
+  "name": "sequelize-6-guard",
+  "version": "0.1.4",
+  "description": "A fork of sequelize-guard with compatibility for sequelize 6",
   "main": "lib/index.js",
   "scripts": {
     "debug": "node ./tests/runner.js --inspect-brk=9229",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lotivo/sequelize-guard.git"
+    "url": "git+https://github.com/hossamadel23895/sequelize-guard.git"
   },
   "keywords": [
     "sequelize-guard",
@@ -28,9 +28,9 @@
   "author": "Pankaj Vaghela <vpankaj1998official@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lotivo/sequelize-guard/issues"
+    "url": "https://github.com/hossamadel23895/sequelize-guard/issues"
   },
-  "homepage": "https://github.com/lotivo/sequelize-guard#readme",
+  "homepage": "https://github.com/hossamadel23895/sequelize-guard#readme",
   "engines": {
     "node": ">=4.2.4"
   },
