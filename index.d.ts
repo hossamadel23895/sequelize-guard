@@ -42,12 +42,6 @@ interface GuardUser {
 }
 
 /* ---------- Models ---------- */
-declare class GuardResource extends Model<GuardResource> {
-  id: number;
-  name: string;
-  description: string;
-}
-
 declare class GuardPermission extends Model<GuardPermission> {
   id: number;
   name: string;
@@ -89,7 +83,6 @@ declare class RoleUser extends Model<RoleUser> {
 }
 
 interface GuardModels {
-  GuardResource,
   GuardRole,
   GuardPermission,
   RolePermission,

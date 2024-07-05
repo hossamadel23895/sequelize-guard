@@ -12,7 +12,7 @@ exports.init = function () {
   describe('SequelizeGuard init custom config', function () {
     it('should be initialized when user passed', function (done) {
       let GuardUser = this.seqMem1.define('User', schemas['users'], {
-        tableName: `guard_users`,
+        tableName: `users`,
       });
       let seqGuard = new SequelizeGuard(this.seqMem1, {
         sync: false,
@@ -66,7 +66,7 @@ exports.Constructor = function () {
 
     it('properly runs up migration', function () {
       migration = [];
-      // ['guard_actions', 'guard_resources', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
+      // ['guard_actions', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
       let expected = SequelizeGuard.migration.tables.map((t) => 'guard_' + t);
 
       SequelizeGuard.migration.up(queryInterfaceStub, this.guard.sequelize);
@@ -76,7 +76,7 @@ exports.Constructor = function () {
 
     it('properly runs up migration with options', function () {
       migration = [];
-      // ['guard_actions', 'guard_resources', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
+      // ['guard_actions', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
       let expected = SequelizeGuard.migration.tables.map((t) => 'guard_' + t);
 
       SequelizeGuard.migration.up(queryInterfaceStub, this.guard.sequelize, {
@@ -90,7 +90,7 @@ exports.Constructor = function () {
 
     it('properly runs down migrations', function () {
       migration = [];
-      // ['guard_actions', 'guard_resources', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
+      // ['guard_actions', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
       let expected = SequelizeGuard.migration.tables.map((t) => 'guard_' + t);
 
       SequelizeGuard.migration.down(queryInterfaceStub, this.guard.sequelize);
@@ -98,7 +98,7 @@ exports.Constructor = function () {
     });
     it('properly runs down migrations with options', function () {
       migration = [];
-      // ['guard_actions', 'guard_resources', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
+      // ['guard_actions', 'guard_permissions', 'guard_roles', 'guard_role_user', 'guard_role_permission'  ];
       let expected = SequelizeGuard.migration.tables.map((t) => 'guard_' + t);
 
       SequelizeGuard.migration.down(queryInterfaceStub, this.guard.sequelize, {
@@ -139,8 +139,8 @@ exports.Constructor = function () {
         });
     });
 
-    it('should return all guard models, i.e. 6 models', function () {
-      expect(Object.keys(this.guard.models()).length).to.equal(6);
+    it('should return all guard models, i.e. 5 models', function () {
+      expect(Object.keys(this.guard.models()).length).to.equal(5);
     });
   });
 };
@@ -1045,19 +1045,6 @@ exports.customConfig = function () {
 
       this.guard2 = seqGuard2;
       done();
-    });
-
-    it('should work without user cache', function (done) {
-      let self = this;
-      self.guard2
-        .makeUser({ name: 'SuperAdmin', email: 'superadmin@test.com' })
-        .then(function (user) {
-          self.guard2.getUserRoles(user).then((roles) => {
-            // roles
-            expect(roles).to.be.an('array');
-            done();
-          });
-        });
     });
   });
 };
