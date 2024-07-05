@@ -965,6 +965,15 @@ exports.GuardAuthorize = function () {
           }
         );
       });
+	  it('should allow user to access for having one of the required permissions', function () {
+        return this.guard
+          .models()
+          .GuardUser.findByPk(4)
+          .then(async (user) => {
+            let a = await user.hasAnyOf(['view blog', 'edit blog']);
+            assert(a);
+          });
+      });
       it('it should setup cache', function () {
         return this.guard.getCache().then((cache) => {
           // console.log('test setup cache', cache);

@@ -1,6 +1,6 @@
 {
   "name": "sequelize-6-guard",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "A fork of sequelize-guard with compatibility for sequelize 6",
   "main": "lib/index.js",
   "scripts": {
