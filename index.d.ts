@@ -72,8 +72,6 @@ declare class RolePermission extends Model<RolePermission> {
  */
 declare class _GuardUser extends Model<_GuardUser> {
   id: number;
-  name: string;
-  email: string;
 }
 
 declare class RoleUser extends Model<RoleUser> {
